@@ -1,6 +1,6 @@
 import { Api } from './Api'
 
-class MoleculesApi extends Api {
+class SaladsApi extends Api {
   constructor({ baseUrl, headers }) {
     super({ baseUrl, headers })
   }
@@ -8,19 +8,19 @@ class MoleculesApi extends Api {
   getList() {
     return this._checkResponse({
       method: 'GET',
-      path: '/molecules',
+      path: '/salads',
     })
   }
 
   getById({ id }) {
     return this._checkResponse({
       method: 'GET',
-      path: `/molecule/${id}`,
+      path: `/salad/${id}`,
     })
   }
 }
 
-export const moleculesApi = new MoleculesApi({
+export const saladsApi = new SaladsApi({
   baseUrl: 'http://test-job.webatom.ru',
   headers: {
     'Content-Type': 'application/json',
