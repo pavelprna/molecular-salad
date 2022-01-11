@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { SaladsList } from './components/SaladsList/SaladsList'
 import { fetchMolecules } from './redux/moleculeSlice'
 import { fetchSalads } from './redux/saladSlice'
 
@@ -15,7 +16,8 @@ function App() {
 
   return (
     <>
-      {salads.map((salad) => console.log(salad))}
+      <SaladsList items={salads} title="Choose a ready-made salad" />
+      {/* <MoleculesList items={molecules} title="or create your own!" /> */}
       {molecules.map((molecule) => (
         <div key={molecule._id}>
           <p>{molecule.title}</p>

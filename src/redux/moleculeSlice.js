@@ -31,6 +31,4 @@ export const moleculesSlice = createSlice({
   },
 })
 
-const { getMolecules } = moleculesSlice.actions
-
 export default moleculesSlice.reducer
