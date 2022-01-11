@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { SaladsList } from './components/SaladsList/SaladsList'
+import { MoleculesList } from './components/MoleculesList/MoleculesList'
 import { fetchMolecules } from './redux/moleculeSlice'
 import { fetchSalads } from './redux/saladSlice'
 
@@ -17,7 +18,7 @@ function App() {
   return (
     <>
       <SaladsList items={salads} title="Choose a ready-made salad 👨‍🍳" />
-      {/* <MoleculesList items={molecules} title="or create your own!" /> */}
+      <MoleculesList items={molecules} title="or create your own! ✨" />
     </>
   )
 }
