@@ -16,18 +16,8 @@ function App() {
 
   return (
     <>
-      <SaladsList items={salads} title="Choose a ready-made salad" />
+      <SaladsList items={salads} title="Choose a ready-made salad 👨‍🍳" />
       {/* <MoleculesList items={molecules} title="or create your own!" /> */}
-      {molecules.map((molecule) => (
-        <div key={molecule._id}>
-          <p>{molecule.title}</p>
-          <p>{molecule.qty}</p>
-          <img
-            src={`http://test-job.webatom.ru${molecule.image}`}
-            alt={molecule.title}
-          />
-        </div>
-      ))}
     </>
   )
 }
