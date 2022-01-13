@@ -31,22 +31,25 @@ export const SaladItem = ({ salad }) => {
   }
 
   return (
-    <article
-      className={`salad-item ${isActive ? '' : 'salad-item_disabled'}`}
-      onClick={handleClick}
-    >
+    <article className={`salad-item ${isActive ? '' : 'salad-item_disabled'}`}>
       <h3 className="salad-item__title">{salad.title}</h3>
-      {salad.composition?.map((molecule) => {
-        const [currentMolecule] = molecules.filter((m) => m._id === molecule)
-        return (
-          <MoleculeIcon
-            key={currentMolecule._id}
-            title={currentMolecule.title}
-            image={currentMolecule.image}
-          />
-        )
-      })}
-
+      <ul className="icons">
+        {salad.composition?.map((molecule) => {
+          const [currentMolecule] = molecules.filter((m) => m._id === molecule)
+          return (
+            <li className="icons__item">
+              <MoleculeIcon
+                key={currentMolecule._id}
+                title={currentMolecule.title}
+                image={currentMolecule.image}
+              />
+            </li>
+          )
+        })}
+      </ul>
+      <button onClick={handleClick} className="salad-item__button">
+        add to order
+      </button>
       <p className="salad-item__available">
         {isActive ? '' : 'not enough molecules'}
       </p>
