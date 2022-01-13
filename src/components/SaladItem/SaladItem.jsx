@@ -11,7 +11,7 @@ export const SaladItem = ({ salad }) => {
   const [isActive, setIsActive] = useState(true)
 
   useEffect(() => {
-    salad.composition.map((m) => {
+    salad.composition.forEach((m) => {
       molecules.forEach((molecule) => {
         if (molecule._id === m && molecule.qty < 1) {
           setIsActive(false)
