@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { MoleculeIcon } from '../MoleculeIcon/MoleculeIcon'
-import { removeMolecule } from '../../redux/moleculeSlice'
+import { addMolecule } from '../../redux/customSaladSlice'
 import { useDispatch } from 'react-redux'
 
 export const MoleculeItem = ({ molecule }) => {
@@ -15,7 +15,7 @@ export const MoleculeItem = ({ molecule }) => {
 
   const handleClick = () => {
     if (isActive) {
-      dispatch(removeMolecule({ _id: molecule._id }))
+      dispatch(addMolecule({ _id: molecule._id }))
     }
   }
 

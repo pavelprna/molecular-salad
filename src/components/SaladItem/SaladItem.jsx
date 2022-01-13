@@ -2,6 +2,7 @@ import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
 import { MoleculeIcon } from '../MoleculeIcon/MoleculeIcon'
 import { removeMolecule } from '../../redux/moleculeSlice'
+import { addToOrder } from '../../redux/orderSlice'
 import './SaladItem.css'
 import { useEffect, useState } from 'react'
 
@@ -22,9 +23,10 @@ export const SaladItem = ({ salad }) => {
 
   const handleClick = () => {
     if (isActive) {
-      salad.composition?.forEach((molecule) =>
+      salad.composition?.forEach((molecule) => {
         dispatch(removeMolecule({ _id: molecule }))
-      )
+        dispatch(addToOrder({ _id: molecule }))
+      })
     }
   }
 
