@@ -44,6 +44,10 @@ export const SaladItem = ({ salad }) => {
           />
         )
       })}
+
+      <p className="salad-item__available">
+        {isActive ? '' : 'not enough molecules'}
+      </p>
     </article>
   )
 }

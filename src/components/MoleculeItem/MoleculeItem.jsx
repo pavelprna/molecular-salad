@@ -4,7 +4,6 @@ import { removeMolecule } from '../../redux/moleculeSlice'
 import { useDispatch } from 'react-redux'
 
 export const MoleculeItem = ({ molecule }) => {
-  const available = (qty) => (!qty ? 'Out of stock :(' : `Available: ${qty}`)
   const dispatch = useDispatch()
   const [isActive, setIsActive] = useState(true)
 
@@ -14,7 +13,13 @@ export const MoleculeItem = ({ molecule }) => {
     }
   }, [molecule.qty])
 
-  const handleClick = () => dispatch(removeMolecule({ _id: molecule._id }))
+  const handleClick = () => {
+    if (isActive) {
+      dispatch(removeMolecule({ _id: molecule._id }))
+    }
+  }
+
+  const available = (qty) => (!qty ? 'Out of stock :(' : `Available: ${qty}`)
 
   return (
     <article
