@@ -19,6 +19,16 @@ export const fetchMolecules = createAsyncThunk(
 export const moleculesSlice = createSlice({
   name: 'molecules',
   initialState,
+  reducers: {
+    removeMolecule(state, action) {
+      state.result = state.result.map((molecule) => {
+        if (molecule._id === action.payload._id) {
+          molecule.qty -= 1
+        }
+        return molecule
+      })
+    },
+  },
   extraReducers: {
     [fetchMolecules.pending]: (state) => {
       state.status = 'loading'
@@ -30,5 +40,7 @@ export const moleculesSlice = createSlice({
     },
   },
 })
+
+export const { removeMolecule } = moleculesSlice.actions
 
 export default moleculesSlice.reducer
