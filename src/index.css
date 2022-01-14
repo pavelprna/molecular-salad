@@ -14,11 +14,12 @@ code {
 
 .section {
   max-width: 900px;
-  margin: 0 auto;
+  margin: 50px auto;
+  padding: 0 20px;
 }
 
 .section__title {
-  margin: 40px 0;
+  margin: 0;
   text-align: center;
   font-size: 40px;
   width: 100%;
@@ -27,7 +28,20 @@ code {
 .section__list {
   list-style: none;
   padding: 0;
+  margin: 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 30px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 60px;
+  margin: 0 auto;
+}
+
+.header__title {
+  margin: 0;
 }

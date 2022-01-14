@@ -31,7 +31,7 @@ export const SaladItem = ({ salad, className }) => {
     if (isActive) {
       salad.composition?.forEach((molecule) => {
         dispatch(removeMolecule({ _id: molecule }))
-        dispatch(addToOrder({ _id: molecule }))
+        dispatch(addToOrder(molecules.find((m) => m._id === molecule)))
         dispatch(clearSalad())
       })
     }

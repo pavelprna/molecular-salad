@@ -1,0 +1,38 @@
+.order {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 0 450px;
+}
+
+.order__title {
+  margin: 0;
+}
+
+.order__list {
+  display: flex;
+  list-style: none;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+}
+
+.order__icon {
+  position: relative;
+}
+
+.order__qty {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: #ff7f50;
+  color: #fff;
+  font-size: 10px;
+  height: 14px;
+  min-width: 14px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
