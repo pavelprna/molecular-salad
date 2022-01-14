@@ -31,24 +31,18 @@ export const Order = () => {
 
   return (
     <div className="order">
-      {!!notification ? (
-        <p>{notification}</p>
-      ) : (
-        <>
-          <h2 className="order__title">Your order:</h2>
-          <ul className="order__list">
-            {order.map((molecule) => (
-              <li className="order__item" key={molecule._id}>
-                <div className="order__icon">
-                  <div className="order__qty">{molecule.qty}</div>
-                  <MoleculeIcon image={molecule.image} title={molecule.title} />
-                </div>
-              </li>
-            ))}
-          </ul>
-          {!!order.length && <button onClick={handleClick}>Make Order!</button>}
-        </>
-      )}
+      <h2 className="order__title">Your order:</h2>
+      <ul className="order__list">
+        {order.map((molecule) => (
+          <li className="order__item" key={molecule._id}>
+            <div className="order__icon">
+              <div className="order__qty">{molecule.qty}</div>
+              <MoleculeIcon image={molecule.image} title={molecule.title} />
+            </div>
+          </li>
+        ))}
+      </ul>
+      {!!order.length && <button onClick={handleClick}>Make Order!</button>}
     </div>
   )
 }
