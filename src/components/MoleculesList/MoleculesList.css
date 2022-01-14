@@ -1,0 +1,10 @@
+.molecules {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 30px;
+}
+
+.molecules__list {
+  flex: 1 200px;
+}

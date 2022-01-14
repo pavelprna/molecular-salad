@@ -5,13 +5,19 @@ import { removeMolecule } from '../../redux/moleculeSlice'
 import { addToOrder } from '../../redux/orderSlice'
 import './SaladItem.css'
 import { useEffect, useState } from 'react'
+import { clearSalad } from '../../redux/customSaladSlice'
 
-export const SaladItem = ({ salad }) => {
+export const SaladItem = ({ salad, className }) => {
   const molecules = useSelector((state) => state.molecules.result)
   const dispatch = useDispatch()
   const [isActive, setIsActive] = useState(true)
 
   useEffect(() => {
+    if (salad.composition.length < 1) {
+      setIsActive(false)
+    } else {
+      setIsActive(true)
+    }
     salad.composition.forEach((m) => {
       molecules.forEach((molecule) => {
         if (molecule._id === m && molecule.qty < 1) {
@@ -26,20 +32,24 @@ export const SaladItem = ({ salad }) => {
       salad.composition?.forEach((molecule) => {
         dispatch(removeMolecule({ _id: molecule }))
         dispatch(addToOrder({ _id: molecule }))
+        dispatch(clearSalad())
       })
     }
   }
 
   return (
-    <article className={`salad-item ${isActive ? '' : 'salad-item_disabled'}`}>
+    <article
+      className={`salad-item ${
+        isActive ? '' : 'salad-item_disabled'
+      } ${className}`}
+    >
       <h3 className="salad-item__title">{salad.title}</h3>
       <ul className="icons">
         {salad.composition?.map((molecule) => {
           const [currentMolecule] = molecules.filter((m) => m._id === molecule)
           return (
-            <li className="icons__item">
+            <li className="icons__item" key={currentMolecule._id}>
               <MoleculeIcon
-                key={currentMolecule._id}
                 title={currentMolecule.title}
                 image={currentMolecule.image}
               />

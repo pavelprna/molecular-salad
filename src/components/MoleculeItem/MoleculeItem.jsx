@@ -27,11 +27,7 @@ export const MoleculeItem = ({ molecule }) => {
       onClick={handleClick}
     >
       <h3 className="salad-item__title">{molecule.title}</h3>
-      <MoleculeIcon
-        image={molecule.image}
-        title={molecule.title}
-        large={true}
-      />
+      <MoleculeIcon image={molecule.image} title={molecule.title} />
       <p className="salad-item__available">{available(molecule.qty)}</p>
     </article>
   )

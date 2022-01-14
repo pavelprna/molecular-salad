@@ -13,6 +13,9 @@
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
     rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 }
+.salads__item_type_custom {
+  flex: 0 290px;
+}
 .salad-item_disabled {
   opacity: 0.4;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
@@ -42,7 +45,6 @@
   flex: 1 100%;
   font-size: 12px;
   text-align: center;
-  min-height: 45px;
 }
 
 .icons {

@@ -14,9 +14,12 @@ export const customSaladSlice = createSlice({
         state.composition.push(_id)
       }
     },
+    clearSalad() {
+      return initialState
+    },
   },
 })
 
-export const { addMolecule } = customSaladSlice.actions
+export const { addMolecule, clearSalad } = customSaladSlice.actions
 
 export default customSaladSlice.reducer

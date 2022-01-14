@@ -2,17 +2,3 @@
   padding: 0 20px;
   margin-bottom: 40px;
 }
-.salads__title {
-  margin: 40px 0;
-  text-align: center;
-  font-size: 40px;
-}
-.salads__list {
-  list-style: none;
-  margin: 0 auto;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 30px;
-  max-width: 900px;
-}
